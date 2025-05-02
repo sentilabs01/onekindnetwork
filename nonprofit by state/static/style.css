@@ -1,0 +1,136 @@
+:root {
+    --card-bg: #ffffff;
+    --text-color: #212529;
+    --body-bg: #f8f9fa;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+}
+
+[data-bs-theme="dark"] {
+    --card-bg: #2d2d2d;
+    --text-color: #f8f9fa;
+    --body-bg: #1a1a1a;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.result-card {
+    margin-bottom: 1rem;
+    transition: transform 0.2s;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.result-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#results {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.website-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.website-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+[data-bs-theme="dark"] .website-link {
+    color: var(--secondary-color);
+}
+
+[data-bs-theme="dark"] .website-link:hover {
+    color: var(--primary-color);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--body-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Advanced Search styling */
+#advancedSearch .card {
+    background-color: rgba(var(--primary-color-rgb), 0.05);
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Search input focus */
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--secondary-color-rgb), 0.25);
+}
+
+/* Dark mode specific adjustments */
+[data-bs-theme="dark"] .form-control {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+[data-bs-theme="dark"] .form-control:focus {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+} 

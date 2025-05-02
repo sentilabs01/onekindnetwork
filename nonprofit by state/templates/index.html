@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Kind Network - Nonprofit Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container-fluid mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h1 class="mb-0">One Kind Network</h1>
+                <p class="text-muted mb-0">Nonprofit Search Engine</p>
+            </div>
+            <button class="btn btn-outline-secondary" id="themeToggle">
+                <i class="bi bi-moon-stars"></i> Dark Mode
+            </button>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="searchForm" class="mb-4">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-lg" id="searchQuery" 
+                                               placeholder="Search by organization name, location, or country...">
+                                        <button type="submit" class="btn btn-primary btn-lg">
+                                            <i class="bi bi-search"></i> Search
+                                        </button>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                        <small class="text-muted">
+                                            Examples: "Red Cross Kenya", "Food Bank New York", "Education Canada"
+                                        </small>
+                                        <button type="button" class="btn btn-link btn-sm" id="advancedSearchToggle">
+                                            Advanced Search
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-12" id="advancedSearch" style="display: none;">
+                                    <div class="card mt-3">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Advanced Search</h6>
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="internationalOnly">
+                                                    <label class="form-check-label" for="internationalOnly">
+                                                        Search International Nonprofits Only
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <select class="form-select" id="stateSelect">
+                                                <option value="">All Locations</option>
+                                                <optgroup label="International">
+                                                    <option value="INT">International Nonprofits</option>
+                                                </optgroup>
+                                                <optgroup label="States">
+                                                    <option value="AL">Alabama</option>
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="AZ">Arizona</option>
+                                                    <option value="AR">Arkansas</option>
+                                                    <option value="CA">California</option>
+                                                    <option value="CO">Colorado</option>
+                                                    <script
+                                                    src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@v1.0.7/dist/build/static/js/bundle.min.js">
+                                                  </script>
+                                                    <langflow-chat
+                                                      window_title="Simple Agent"
+                                                      flow_id="634aa195-f983-4f66-bdb3-54d34e4aa96c"
+                                                      host_url="https://astra.datastax.com">
+                                                  </langflow-chat>                                                  <option value="CT">Connecticut</option>
+                                                    <option value="DE">Delaware</option>
+                                                    <option value="FL">Florida</option>
+                                                    <option value="GA">Georgia</option>
+                                                    <option value="HI">Hawaii</option>
+                                                    <option value="ID">Idaho</option>
+                                                    <option value="IL">Illinois</option>
+                                                    <option value="IN">Indiana</option>
+                                                    <option value="IA">Iowa</option>
+                                                    <option value="KS">Kansas</option>
+                                                    <option value="KY">Kentucky</option>
+                                                    <option value="LA">Louisiana</option>
+                                                    <option value="ME">Maine</option>
+                                                    <option value="MD">Maryland</option>
+                                                    <option value="MA">Massachusetts</option>
+                                                    <option value="MI">Michigan</option>
+                                                    <option value="MN">Minnesota</option>
+                                                    <option value="MS">Mississippi</option>
+                                                    <option value="MO">Missouri</option>
+                                                    <option value="MT">Montana</option>
+                                                    <option value="NE">Nebraska</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="NH">New Hampshire</option>
+                                                    <option value="NJ">New Jersey</option>
+                                                    <option value="NM">New Mexico</option>
+                                                    <option value="NY">New York</option>
+                                                    <option value="NC">North Carolina</option>
+                                                    <option value="ND">North Dakota</option>
+                                                    <option value="OH">Ohio</option>
+                                                    <option value="OK">Oklahoma</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="PA">Pennsylvania</option>
+                                                    <option value="RI">Rhode Island</option>
+                                                    <option value="SC">South Carolina</option>
+                                                    <option value="SD">South Dakota</option>
+                                                    <option value="TN">Tennessee</option>
+                                                    <option value="TX">Texas</option>
+                                                    <option value="UT">Utah</option>
+                                                    <option value="VT">Vermont</option>
+                                                    <option value="VA">Virginia</option>
+                                                    <option value="WA">Washington</option>
+                                                    <option value="WV">West Virginia</option>
+                                                    <option value="WI">Wisconsin</option>
+                                                    <option value="WY">Wyoming</option>
+                                                </optgroup>
+                                                <optgroup label="Territories">
+                                                    <option value="AS">American Samoa</option>
+                                                    <option value="GU">Guam</option>
+                                                    <option value="MP">Northern Mariana Islands</option>
+                                                    <option value="PR">Puerto Rico</option>
+                                                    <option value="VI">U.S. Virgin Islands</option>
+                                                </optgroup>
+                                                <optgroup label="Military">
+                                                    <option value="AA">Armed Forces Americas</option>
+                                                    <option value="AE">Armed Forces Europe</option>
+                                                    <option value="AP">Armed Forces Pacific</option>
+                                                </optgroup>
+                                                <optgroup label="Other">
+                                                    <option value="DC">District of Columbia</option>
+                                                    <option value="FM">Federated States of Micronesia</option>
+                                                    <option value="MH">Marshall Islands</option>
+                                                    <option value="PW">Palau</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="results" class="mt-4">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
