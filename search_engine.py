@@ -10,7 +10,8 @@ import urllib.parse
 
 class NonprofitSearchEngine:
     def __init__(self):
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        # Initialize the model with CPU explicitly
+        self.model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
         self.index = None
         self.data = None
         self.vector_dim = 384  # Dimension of the embeddings
