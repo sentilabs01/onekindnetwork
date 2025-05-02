@@ -7,13 +7,19 @@ from pathlib import Path
 import streamlit as st
 import chardet
 import urllib.parse
+import torch
 
 class NonprofitSearchEngine:
     def __init__(self):
-        # Initialize the model with CPU explicitly
-        self.model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
-        self.index = None
+        # Initialize the model without device specification
+        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        # Force CPU usage
+        self.model.to('cpu')
+        # Disable gradient computation
+        torch.set_grad_enabled(False)
         self.data = None
+        self.index = None
+        self.embeddings = None
         self.vector_dim = 384  # Dimension of the embeddings
         
     def detect_encoding(self, file_path):
@@ -62,11 +68,11 @@ class NonprofitSearchEngine:
             self.load_data()
             
         # Create embeddings for all searchable text
-        embeddings = self.model.encode(self.data['search_text'].tolist())
+        self.embeddings = self.model.encode(self.data['search_text'].tolist())
         
         # Create and train FAISS index
         self.index = faiss.IndexFlatL2(self.vector_dim)
-        self.index.add(embeddings.astype('float32'))
+        self.index.add(self.embeddings.astype('float32'))
     
     def search(self, query, k=10):
         """Search for nonprofits based on query"""
