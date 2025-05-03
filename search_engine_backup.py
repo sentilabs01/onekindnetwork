@@ -10,7 +10,8 @@ import urllib.parse
 
 class NonprofitSearchEngine:
     def __init__(self):
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        # Initialize the model with CPU explicitly
+        self.model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
         self.index = None
         self.data = None
         self.vector_dim = 384  # Dimension of the embeddings
@@ -34,11 +35,11 @@ class NonprofitSearchEngine:
             dfs.append(df)
         
         # Load IA nonprofits data
-        ia_path = Path("IA nonprofits")
-        for csv_file in ia_path.glob("*.csv"):
-            encoding = self.detect_encoding(csv_file)
-            df = pd.read_csv(csv_file, encoding=encoding)
-            dfs.append(df)
+        # ia_path = Path("IA nonprofits")
+        # for csv_file in ia_path.glob("*.csv"):
+        #     encoding = self.detect_encoding(csv_file)
+        #     df = pd.read_csv(csv_file, encoding=encoding)
+        #     dfs.append(df)
             
         # Combine all dataframes
         if dfs:

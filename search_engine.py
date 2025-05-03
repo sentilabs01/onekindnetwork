@@ -41,11 +41,11 @@ class NonprofitSearchEngine:
             dfs.append(df)
         
         # Load IA nonprofits data
-        ia_path = Path("IA nonprofits")
-        for csv_file in ia_path.glob("*.csv"):
-            encoding = self.detect_encoding(csv_file)
-            df = pd.read_csv(csv_file, encoding=encoding)
-            dfs.append(df)
+        # ia_path = Path("IA nonprofits")
+        # for csv_file in ia_path.glob("*.csv"):
+        #     encoding = self.detect_encoding(csv_file)
+        #     df = pd.read_csv(csv_file, encoding=encoding)
+        #     dfs.append(df)
             
         # Combine all dataframes
         if dfs:
