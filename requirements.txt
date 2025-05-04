@@ -4,5 +4,5 @@ numpy>=1.21.0
 sentence-transformers
 faiss-cpu
 chardet
-torch>=2.0.0,<2.2.0
+torch==2.0.1
 transformers==4.30.0 
